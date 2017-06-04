@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEST_TIMEOUT=10s
+TEST_TIMEOUT=5s
 
 for challenge in "$@"; do
 	if [ -d "./src/$challenge" ]; then
@@ -28,8 +28,6 @@ for challenge in "$@"; do
 				fi
 
 				echo "[$test_status] $challenge / $i / $diff_time sec."
-			else
-				break
 			fi 
 		done
 	else

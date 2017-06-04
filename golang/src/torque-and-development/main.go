@@ -1,7 +1,14 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
+	"os"
+)
+
+
+var (
+	input = os.Open()
+	// input = os.Stdin
 )
 
 func contains(s []int, e int) bool {

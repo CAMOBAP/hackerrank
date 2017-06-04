@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func main() {
 	var n int
-	fmt.Scanln(&n)
+	fmt.Fscan(os.Stdin, &n)
 	A := make([]int, 0, n)
 	for i := 0; i < n; i++ {
 		var a int
