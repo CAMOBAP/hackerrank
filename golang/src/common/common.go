@@ -7,6 +7,8 @@ import (
 	"syscall"
 
 	"runtime/pprof"
+	"runtime"
+	"path/filepath"
 )
 
 func StartProfile() {
@@ -23,4 +25,13 @@ func StartProfile() {
 
 func StopProfile() {
 	defer pprof.StopCPUProfile()
+}
+
+func Pwd() string {
+	_, filename, _, _ := runtime.Caller(1)
+	return filepath.Dir(filename)
+}
+
+func Relative(file string) string {
+	return filepath.Join(Pwd(), file)
 }

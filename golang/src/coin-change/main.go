@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 	"sort"
+	"os"
 
 	"common"
-	"os"
 )
 
 var (
-	input, _ = os.Open("/Users/camobap/Developers/Projects/hackerrank/golang/src/coin-change/test/input02.txt")
+	input, _ = os.Open(common.Relative("test/input02.txt"))
 	// input = os.Stdin
 )
 

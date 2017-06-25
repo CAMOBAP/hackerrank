@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 	"os"
+	"common"
 )
 
 
 var (
-	input = os.Open()
+	input, _ = os.Open("/Users/camobap/Developers/Projects/hackerrank/golang/src/coin-change/test/input04.txt")
 	// input = os.Stdin
 )
 
@@ -117,6 +118,9 @@ func drop_edges_input(m int64) {
 
 
 func main() {
+	common.StartProfile()
+	defer common.StopProfile()
+
     var q int
     var n, m, c_lib, c_road int64
     fmt.Scanf("%d\n", &q)
