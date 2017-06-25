@@ -1,8 +1,24 @@
 #!/bin/bash
 
+while true; do
+    case $1 in
+      --list) challenges=$(ls -1 src | grep -vwE '(common|golang.org)')
+		echo "Challenges list:" $challenges
+		exit 0;;
+	  *) break;;
+    esac
+done
+
 TEST_TIMEOUT=5s
 
-for challenge in "$@"; do
+challenges="$@"
+if [ -z "$challenges" ]; then
+	challenges=$(ls -1 src | grep -vwE "(common|golang.org)")
+fi
+
+for challenge in $challenges; do
+	echo $challenge
+
 	if [ -d "./src/$challenge" ]; then
 		go install $challenge
 		
