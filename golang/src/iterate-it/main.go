@@ -32,7 +32,7 @@ func main() {
 		}
 
 		// fmt.Printf("B = %v\n", B)
-		fmt.Printf("len(B) = %v\n", len(B))
+		// fmt.Printf("len(B) = %v\n", len(B))
 
 		A = B
 		rep++

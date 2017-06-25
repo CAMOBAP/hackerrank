@@ -3,13 +3,14 @@ package main
 import (
     "fmt"
     "os"
-	
-    "common"
+
+    // "common"
+	"common"
 )
 
 var (
     input, _ = os.Open(common.Relative("test/input04.txt"))
-    // input = os.Stdin
+	// input = os.Stdin
 )
 
 // http://blog.plover.com/math/choose.html
