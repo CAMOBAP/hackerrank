@@ -8,7 +8,7 @@ import (
 
 
 var (
-	input, _ = os.Open("/Users/camobap/Developers/Projects/hackerrank/golang/src/coin-change/test/input04.txt")
+	input, _ = os.Open(common.Relative("test/input04.txt"))
 	// input = os.Stdin
 )
 
