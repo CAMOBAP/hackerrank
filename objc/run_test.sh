@@ -5,7 +5,7 @@ OUT_DIR=bin
 
 while true; do
     case $1 in
-      --list) challenges=$(ls -1 . | grep -vwE "($OUT_DIR|run_test.sh)")
+      --list) challenges=$(ls -1 . | grep -vwE "($OUT_DIR|README.md|run_test.sh)")
 		echo "Challenges list:" $challenges
 		exit 0;;
 	  *) break;;
@@ -14,7 +14,7 @@ done
 
 challenges="$@"
 if [ -z "$challenges" ]; then
-	challenges=$(ls -1 . | grep -vwE "($OUT_DIR|run_test.sh)")
+	challenges=$(ls -1 . | grep -vwE "($OUT_DIR|README.md|run_test.sh)")
 fi
 
 mkdir -p $OUT_DIR
