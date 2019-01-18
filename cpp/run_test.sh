@@ -34,7 +34,7 @@ for challenge in $challenges; do
 				start_time=$(date +%s)
   
 				echo "$OUT_DIR/$challenge < $input > $cal_output" 
-				gtimeout $TEST_TIMEOUT $OUT_DIR/$challenge < $input > $cal_output
+				OUTPUT_PATH=$cal_output gtimeout $TEST_TIMEOUT $OUT_DIR/$challenge < $input > $cal_output
 				test_exitcode=$?
 
 				end_time=$(date +%s)
