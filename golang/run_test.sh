@@ -32,7 +32,7 @@ for challenge in $challenges; do
 
                 # gtimeout $TEST_TIMEOUT   
                 echo "bin/$challenge < $input > $cal_output" 
-				gtimeout $TEST_TIMEOUT bin/$challenge < $input > $cal_output
+				OUTPUT_PATH=$cal_output gtimeout $TEST_TIMEOUT bin/$challenge < $input > $cal_output
 				test_exitcode=$?
 
 				end_time=$(date +%s)
