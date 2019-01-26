@@ -35,7 +35,7 @@ for challenge in $challenges; do
 				start_time=$(date +%s)
   
 				echo "$OUT_DIR/$challenge < $input > $cal_output" 
-				OUTPUT_PATH=$cal_output gtimeout $TEST_TIMEOUT java -cp $OUT_DIR/$challenge Solution < $input
+				OUTPUT_PATH=$cal_output gtimeout $TEST_TIMEOUT java -cp $OUT_DIR/$challenge Solution < $input > $cal_output
 				test_exitcode=$?
 
 				end_time=$(date +%s)
