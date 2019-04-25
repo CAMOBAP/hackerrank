@@ -1,8 +1,10 @@
 #!/bin/bash
 
+IGNORE_DIRS="common|golang.org|Makefile"
+
 while true; do
     case $1 in
-      --list) challenges=$(ls -1 src | grep -vwE '(common|golang.org)')
+      --list) challenges=$(ls -1 src | grep -vwE '($IGNORE_DIRS)')
 		echo "Challenges list:" $challenges
 		exit 0;;
 	  *) break;;
@@ -13,7 +15,7 @@ TEST_TIMEOUT=5s
 
 challenges="$@"
 if [ -z "$challenges" ]; then
-	challenges=$(ls -1 src | grep -vwE "(common|golang.org)")
+	challenges=$(ls -1 src | grep -vwE "($IGNORE_DIRS)")
 fi
 
 for challenge in $challenges; do
